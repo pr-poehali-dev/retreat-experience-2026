@@ -120,11 +120,11 @@ const Index = () => {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden pt-16">
-        <img src={HERO_IMG} alt="Ретрит в Турции" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={HERO_IMG} alt="Ретрит в Турции" className="absolute inset-0 w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b3a3f]/90 via-[#0b3a3f]/30 to-transparent" />
         <div className="relative container pb-20 md:pb-28">
           <div className="max-w-2xl animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur text-white text-xs tracking-widest uppercase mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur text-white text-xs tracking-widest uppercase mb-8 mt-[-80px] md:mt-[-120px]">
               <Icon name="Plane" size={14} /> Турция · 6–7 сентября 2026
             </div>
             <h1 className="font-display text-white text-6xl md:text-8xl font-semibold leading-[0.95] mb-6">
