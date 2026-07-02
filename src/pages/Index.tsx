@@ -9,9 +9,16 @@ import {
 } from '@/components/ui/accordion';
 
 const HERO_IMG =
-  'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/files/6d145158-ab16-4e8e-a65e-31f481c78e8a.jpg';
+  'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/bucket/99cc5c3d-3c4e-4a49-8a26-c9764473f323.jpeg';
 const BEACH_IMG =
-  'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/files/23bdb179-d401-4942-960b-be0993fd3b31.jpg';
+  'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/bucket/c97ecb43-cfde-4869-8111-4c5543fc031f.jpeg';
+const TURKEY_IMG =
+  'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/bucket/f3d399b6-764f-4609-a4c9-beaa343c13a9.jpeg';
+const IRINA_IMG =
+  'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/bucket/07544ee5-6211-405e-b2cc-8c0b625eac50.jpeg';
+const SLAVA_IMG =
+  'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/bucket/dd544f8e-b6ff-4aad-868d-8d87df788bfe.png';
+const VK_URL = '#';
 
 const benefits = [
   {
@@ -49,6 +56,7 @@ const hosts = [
   {
     name: 'Ирина Абрамова',
     role: 'Психолог · Расстановщик',
+    photo: IRINA_IMG,
     points: [
       'Дипломированный психолог, работа с подсознанием',
       'Создатель практик, медитаций, метафорических карт',
@@ -59,6 +67,7 @@ const hosts = [
   {
     name: 'Вячеслав Домовец',
     role: 'Фитнес-тренер · Йога',
+    photo: SLAVA_IMG,
     points: [
       'В йоге с 2011 года, непрерывное обучение',
       'Курс TTC-200, Ришикеш · семинары в Индии и Таиланде',
@@ -98,9 +107,14 @@ const Index = () => {
             <a href="#price" className="hover:text-primary transition-colors">Стоимость</a>
             <a href="#register" className="hover:text-primary transition-colors">Регистрация</a>
           </nav>
-          <Button asChild size="sm" className="rounded-full">
-            <a href="#register">Забронировать</a>
-          </Button>
+          <div className="flex items-center gap-3">
+            <a href={VK_URL} target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте" className="w-9 h-9 rounded-full bg-secondary hover:bg-accent flex items-center justify-center text-primary transition-colors">
+              <Icon name="Share2" fallback="Link" size={16} />
+            </a>
+            <Button asChild size="sm" className="rounded-full">
+              <a href="#register">Забронировать</a>
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -191,16 +205,16 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {hosts.map((h) => (
-            <div key={h.name} className="p-8 md:p-10 rounded-3xl border border-border hover:border-primary/40 transition-colors">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-primary font-display text-2xl font-semibold">
-                  {h.name[0]}
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl font-semibold">{h.name}</h3>
+            <div key={h.name} className="overflow-hidden rounded-3xl border border-border hover:border-primary/40 transition-colors">
+              <div className="relative h-72 overflow-hidden">
+                <img src={h.photo} alt={h.name} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-5 left-6 text-white">
+                  <h3 className="font-display text-3xl font-semibold">{h.name}</h3>
                   <p className="text-primary text-sm">{h.role}</p>
                 </div>
               </div>
+              <div className="p-8 md:p-10 pt-6">
               <ul className="space-y-3">
                 {h.points.map((p) => (
                   <li key={p} className="flex gap-3 text-sm text-muted-foreground">
@@ -209,6 +223,7 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -217,9 +232,12 @@ const Index = () => {
       {/* TURKEY */}
       <section className="py-24 bg-secondary">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-12">
             <p className="text-primary text-sm tracking-widest uppercase mb-3">Место силы</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold">Турция в сентябре</h2>
+          </div>
+          <div className="rounded-3xl overflow-hidden mb-8 h-[380px] md:h-[460px]">
+            <img src={TURKEY_IMG} alt="Пляж ретрита в Турции" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {turkey.map((t) => (
@@ -397,7 +415,10 @@ const Index = () => {
           <span className="font-display text-2xl font-semibold text-primary">
             всё<span className="text-foreground">возможно</span>
           </span>
-          <p className="text-sm text-muted-foreground">Ретрит «Всё возможно» · Турция 2026 · Ирина Абрамова &amp; Вячеслав Домовец</p>
+          <p className="text-sm text-muted-foreground text-center">Ретрит «Всё возможно» · Турция 2026 · Ирина Абрамова &amp; Вячеслав Домовец</p>
+          <a href={VK_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 h-11 rounded-full bg-[#0077FF] text-white text-sm font-medium hover:opacity-90 transition-opacity">
+            <Icon name="Share2" fallback="Link" size={16} /> ВКонтакте
+          </a>
         </div>
       </footer>
     </div>
