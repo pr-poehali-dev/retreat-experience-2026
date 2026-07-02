@@ -130,15 +130,15 @@ const Index = () => {
             </span>
             <div className="w-px h-16 bg-white/30" />
           </div>
-          <div className="max-w-2xl animate-fade-up">
-            <h1 className="font-display text-white text-6xl md:text-8xl font-semibold leading-[0.95] mb-6">
-              Всё<br />возможно
+          <div className="w-full text-center animate-fade-up">
+            <h1 className="font-display text-white text-7xl md:text-9xl font-semibold leading-[0.95] mb-6">
+              <span className="text-black">Всё</span><br />возможно
             </h1>
-            <p className="text-white/85 text-lg md:text-xl max-w-lg mb-8 leading-relaxed">
+            <p className="text-white/85 text-lg md:text-xl mb-8 leading-relaxed">
               Ретрит для тела и души. Психология, йога, расстановки и телесные
               практики в едином потоке — 7 дней у моря.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="rounded-full text-base px-8 h-14">
                 <a href="#register">Забронировать место</a>
               </Button>
