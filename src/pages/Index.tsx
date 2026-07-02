@@ -123,10 +123,14 @@ const Index = () => {
         <img src={HERO_IMG} alt="Ретрит в Турции" className="absolute inset-0 w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b3a3f]/90 via-[#0b3a3f]/30 to-transparent" />
         <div className="relative container pb-20 md:pb-28">
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-3">
+            <div className="w-px h-16 bg-white/30" />
+            <span className="text-white/60 text-[10px] tracking-[0.2em] uppercase" style={{writingMode:'vertical-rl'}}>
+              Турция · 6–7 сентября 2026
+            </span>
+            <div className="w-px h-16 bg-white/30" />
+          </div>
           <div className="max-w-2xl animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur text-white text-xs tracking-widest uppercase mb-8 mt-[-80px] md:mt-[-120px]">
-              <Icon name="Plane" size={14} /> Турция · 6–7 сентября 2026
-            </div>
             <h1 className="font-display text-white text-6xl md:text-8xl font-semibold leading-[0.95] mb-6">
               Всё<br />возможно
             </h1>
