@@ -18,7 +18,7 @@ const IRINA_IMG =
   'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/bucket/07544ee5-6211-405e-b2cc-8c0b625eac50.jpeg';
 const SLAVA_IMG =
   'https://cdn.poehali.dev/projects/1dfdc80b-eebf-4bd0-aec9-6c93f5de1473/bucket/dd544f8e-b6ff-4aad-868d-8d87df788bfe.png';
-const VK_URL = '#';
+const VK_URL = 'https://vk.ru/abramova_garmony';
 
 const benefits = [
   {
